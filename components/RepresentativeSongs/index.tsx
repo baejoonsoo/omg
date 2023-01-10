@@ -1,11 +1,21 @@
 import styled from "@emotion/styled";
-import { RepresentativeSongInfoList } from "docs/data";
+import { MVList, RepresentativeSongInfoList } from "docs/data";
 import { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { MVType } from "utils/interfaces/MV";
 import Song from "./song";
 
-const youtubeURL = "https://www.youtube.com/embed/BWK65TVZ_tM";
+const youtubeURL = "https://www.youtube.com/embed/";
 
 const RepresentativeSongs: NextPage = () => {
+  const [MV, setMV] = useState<MVType>({ title: "", embed: "" });
+
+  useEffect(() => {
+    const idx = Math.floor(Math.random() * MVList.length);
+
+    setMV(MVList[idx]);
+  }, []);
+
   return (
     <SongsSection>
       <SectionTitle>SONG</SectionTitle>
@@ -15,8 +25,8 @@ const RepresentativeSongs: NextPage = () => {
         ))}
       </SongsList>
       <MusicVideo>
-        <Text>Real Love MV</Text>
-        <YouTube src={youtubeURL} />
+        <Text>{MV.title}</Text>
+        <YouTube src={`${youtubeURL + MV.embed}`} />
       </MusicVideo>
     </SongsSection>
   );

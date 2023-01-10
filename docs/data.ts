@@ -1,4 +1,5 @@
 import { memberCardType } from "utils/interfaces/memberCard";
+import { MVType } from "utils/interfaces/MV";
 import { profileType } from "utils/interfaces/profile";
 import { SongType } from "utils/interfaces/song";
 
@@ -176,3 +177,14 @@ export const profileData: profileType = {
     member: ["hyoJung", "yuBin", "arin"],
   },
 };
+
+export const MVList: MVType[] = [
+  { title: "NONSTOP", embed: "iDjQSdN_ig8" },
+  { title: "BUNGEE", embed: "QTD_yleCK9Y" },
+  { title: "CLOSER", embed: "isUudT58Xfk" },
+  { title: "SECRET GARDEN", embed: "QIN5_tJRiyY" },
+  { title: "REMEMBER ME", embed: "RrvdjyIL0fA" },
+  { title: "SSFWL", embed: "udGwca1HBM4" },
+  { title: "REAL LOVE", embed: "BWK65TVZ_tM" },
+  { title: "DUN DUN DANCE", embed: "HzOjwL7IP_o" },
+];
