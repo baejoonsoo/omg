@@ -78,6 +78,7 @@ export const RepresentativeSongInfoList: SongType[] = [
     albumImg: "/img/album/secretGarden.jpg",
     title: "비밀정원",
     releaseDate: "2018.01.09",
+    melonLink: "https://www.melon.com/song/detail.htm?songId=30827192",
     description:
       "비밀정원은 아직은 보이지 않지만, 자신의 꿈을 담은 비밀정원을 꿋꿋이 키워나가는 소녀들의 이야기를 담은 곡으로, Rock 기반 트랙위에 동양적이고 신비스러운 멜로디를 오마이걸만의 감성적인 보컬로 표현한 곡이다.",
   },
@@ -85,6 +86,7 @@ export const RepresentativeSongInfoList: SongType[] = [
     albumImg: "/img/album/nonstop.jpg",
     title: "살짝 설렜어",
     releaseDate: "2020.04.27",
+    melonLink: "https://www.melon.com/song/detail.htm?songId=32559781",
     description:
       "리드미컬한 베이스와 에너제틱한 신스 사운드가 절묘히 블렌딩된 업템포 댄스곡으로, 친구에게 설레어 버린 복잡 미묘한 감정을 보드게임 속 무인도에 빠져버린 상황에 비유한 곡이다.",
   },

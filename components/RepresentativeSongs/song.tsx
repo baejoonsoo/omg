@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { NextPage } from "next";
+import Link from "next/link";
 import { SongType } from "utils/interfaces/song";
 
 interface props {
@@ -9,7 +10,14 @@ interface props {
 const Song: NextPage<props> = ({ songInfo }: props) => {
   return (
     <SongContainer>
-      <AlbumImg img={songInfo.albumImg} />
+      <AlbumImgWrap>
+        <AlbumImg img={songInfo.albumImg} />
+        <AlbumHoverBox id="hoverBox">
+          <a href={songInfo.melonLink}>
+            <Text>노래 들으러 가기</Text>
+          </a>
+        </AlbumHoverBox>
+      </AlbumImgWrap>
       <AlbumInfo>
         <Title>{songInfo.title}</Title>
         <CreatedInfoWrap>
@@ -48,15 +56,42 @@ const AlbumInfo = styled.div`
   gap: 10px;
 `;
 
-const AlbumImg = styled.div`
+const Text = styled.p`
+  font-size: 16px;
+  color: white;
+`;
+
+const AlbumImgWrap = styled.div`
   flex: 0 0 0;
   height: 200px;
   aspect-ratio: 1;
+  margin-right: 25px;
+  position: relative;
+
+  &:hover > div#hoverBox {
+    display: flex;
+  }
+`;
+
+const AlbumHoverBox = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgb(20, 20, 20, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+`;
+
+const AlbumImg = styled.div`
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${({ img }: { img: string }) => img});
-  margin-right: 25px;
 `;
 
 const SongContainer = styled.div`
